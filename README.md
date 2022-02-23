@@ -28,8 +28,16 @@ git clone https://github.com/kazijawad/cycle-gan.git
 # Python Packages
 conda create -n p-cycle-gan python=3.8
 conda activate p-cycle-gan
-conda install tensorflow tensorflow-datasets notebook
-conda install -c conda-forge matplotlib
+pip install tensorflow tensorflow-datasets notebook matplotlib ipywidgets
+```
+
+3. Install custom dataset:
+
+```bash
+cd datasets/clouds
+tfds build
+cd ../people
+tfds build
 ```
 
 3. Run the application:
