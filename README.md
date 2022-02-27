@@ -26,12 +26,12 @@ git clone https://github.com/kazijawad/cycle-gan.git
 
 ```bash
 # Python Packages
-conda create -n p-cycle-gan python=3.8
-conda activate p-cycle-gan
+conda create -n p-head-in-the-clouds python=3.8
+conda activate p-head-in-the-clouds
 pip install tensorflow tensorflow-datasets notebook matplotlib ipywidgets
 ```
 
-3. Install each custom dataset inside `datasets`:
+3. Install each custom dataset inside the `datasets` folder:
 
 ```bash
 tfds build
