@@ -1,6 +1,6 @@
 import tensorflow_datasets as tfds
 
-class Sketch(tfds.core.GeneratorBasedBuilder):
+class Faces(tfds.core.GeneratorBasedBuilder):
     VERSION = tfds.core.Version("1.0.0")
     RELEASE_NOTES = {"1.0.0": "Initial release."}
 
@@ -12,14 +12,15 @@ class Sketch(tfds.core.GeneratorBasedBuilder):
             features=tfds.features.FeaturesDict({
                 "image": tfds.features.Image(shape=(512, 512, 3)),
             }),
-            supervised_keys=None
+            supervised_keys=None,
+            disable_shuffling=True
         )
 
     def _split_generators(self, dl_manager: tfds.download.DownloadManager):
         """Returns SplitGenerators."""
-        path = dl_manager.download_and_extract("https://storage.googleapis.com/kazijawad-datasets/sketch.zip")
+        path = dl_manager.download_and_extract("https://storage.googleapis.com/kazijawad-datasets/faces.zip")
         return {
-            "train": self._generate_examples(path / "sketch"),
+            "train": self._generate_examples(path / "faces"),
         }
 
     def _generate_examples(self, path):
