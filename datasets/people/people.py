@@ -17,7 +17,7 @@ class People(tfds.core.GeneratorBasedBuilder):
 
     def _split_generators(self, dl_manager: tfds.download.DownloadManager):
         """Returns SplitGenerators."""
-        path = dl_manager.download_and_extract("https://datasets.kazijawad.com/people.zip")
+        path = dl_manager.download_and_extract("https://storage.googleapis.com/kazijawad-datasets/people.zip")
         return {
             "train": self._generate_examples(path / "people"),
         }

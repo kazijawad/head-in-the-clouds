@@ -1,4 +1,4 @@
-# CycleGAN
+# Head in the Clouds
 
 ## Getting Started
 
@@ -31,12 +31,9 @@ conda activate p-cycle-gan
 pip install tensorflow tensorflow-datasets notebook matplotlib ipywidgets
 ```
 
-3. Install custom dataset:
+3. Install each custom dataset inside `datasets`:
 
 ```bash
-cd datasets/clouds
-tfds build
-cd ../people
 tfds build
 ```
 

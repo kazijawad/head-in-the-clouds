@@ -1,6 +1,6 @@
 import tensorflow_datasets as tfds
 
-class Clouds(tfds.core.GeneratorBasedBuilder):
+class Sketch(tfds.core.GeneratorBasedBuilder):
     VERSION = tfds.core.Version("1.0.0")
     RELEASE_NOTES = {"1.0.0": "Initial release."}
 
@@ -17,9 +17,9 @@ class Clouds(tfds.core.GeneratorBasedBuilder):
 
     def _split_generators(self, dl_manager: tfds.download.DownloadManager):
         """Returns SplitGenerators."""
-        path = dl_manager.download_and_extract("https://storage.googleapis.com/kazijawad-datasets/clouds.zip")
+        path = dl_manager.download_and_extract("https://storage.googleapis.com/kazijawad-datasets/sketch.zip")
         return {
-            "train": self._generate_examples(path / "clouds"),
+            "train": self._generate_examples(path / "sketch"),
         }
 
     def _generate_examples(self, path):
