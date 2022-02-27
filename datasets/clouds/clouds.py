@@ -1,12 +1,11 @@
 import tensorflow_datasets as tfds
 
 class Clouds(tfds.core.GeneratorBasedBuilder):
-    VERSION = tfds.core.Version("1.0.0")
-    RELEASE_NOTES = {"1.0.0": "Initial release."}
+    VERSION = tfds.core.Version("2.0.0")
+    RELEASE_NOTES = {"2.0.0": "New cloud arragment to match faces."}
 
     def _info(self) -> tfds.core.DatasetInfo:
         """Returns the dataset metadata."""
-        # TODO(clouds): Specifies the tfds.core.DatasetInfo object
         return tfds.core.DatasetInfo(
             builder=self,
             features=tfds.features.FeaturesDict({
@@ -17,7 +16,7 @@ class Clouds(tfds.core.GeneratorBasedBuilder):
 
     def _split_generators(self, dl_manager: tfds.download.DownloadManager):
         """Returns SplitGenerators."""
-        path = dl_manager.download_and_extract("https://storage.googleapis.com/kazijawad-datasets/clouds.zip")
+        path = dl_manager.download_and_extract("https://storage.googleapis.com/kazijawad-datasets/cloudsV2.zip")
         return {
             "train": self._generate_examples(path / "clouds"),
         }
